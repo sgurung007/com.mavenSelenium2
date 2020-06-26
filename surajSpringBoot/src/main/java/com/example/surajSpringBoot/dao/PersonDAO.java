@@ -2,6 +2,7 @@ package com.example.surajSpringBoot.dao;
 
 import com.example.surajSpringBoot.model.Person;
 
+import java.util.List;
 import java.util.UUID;
 
 public interface PersonDAO {
@@ -11,4 +12,7 @@ public interface PersonDAO {
         UUID id = UUID.randomUUID();
         return insertPerson(id, person);
     }
+
+    List<Person> selectAllPeople();
+
 }
