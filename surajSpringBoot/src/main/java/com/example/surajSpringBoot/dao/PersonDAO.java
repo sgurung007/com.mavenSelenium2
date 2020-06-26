@@ -3,6 +3,7 @@ package com.example.surajSpringBoot.dao;
 import com.example.surajSpringBoot.model.Person;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface PersonDAO {
@@ -14,5 +15,11 @@ public interface PersonDAO {
     }
 
     List<Person> selectAllPeople();
+
+    Optional<Person> selectPersonById(UUID id);
+
+    int deletePersonById(UUID id);
+
+    int updatePersonById(UUID id, Person person);
 
 }
