@@ -41,12 +41,12 @@ public class FakePersonDataAccess implements PersonDAO {
     }
 
     @Override
-    public int updatePersonById(UUID id, Person person) {
+    public int updatePersonById(UUID id, Person person1) {
         return selectPersonById(id)
-                .map(person1 -> {
-                    int indexOfPersonToDelete = DB.indexOf(person);
-                    if (indexOfPersonToDelete >= 0) {
-                        DB.set(indexOfPersonToDelete, person);
+                .map(person11 -> {
+                    int indexOfPersonToUpdate = DB.indexOf(person11);
+                    if (indexOfPersonToUpdate >= 0) {
+                        DB.set(indexOfPersonToUpdate, new Person(id, person1.getName()));
                         return 1;
                     }
                     return 0;
